@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sukoon — Mental Health Counselor Finder</title>
+  <meta name="description" content="Sukoon: a mental-health counselor finder concept for Pakistan. Verified counselors, upfront PKR fees, anonymous booking, crisis support. Demo with sample data.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+
+    <header>
+      <h1>Sukoon</h1>
+      <p class="tagline">Mental Health Counselor Finder — UX concept</p>
+      <p class="sample-note">Demo: all counselors, fees, and helplines are sample data invented for this concept.</p>
+    </header>
+
+    <nav class="tabs" aria-label="Sections">
+      <button class="tab-btn" data-tab="home">Home</button>
+      <button class="tab-btn" data-tab="counselors">Counselors</button>
+      <button class="tab-btn" data-tab="selfcheck">Self-check</button>
+      <button class="tab-btn" data-tab="journal">Journal</button>
+      <button class="tab-btn" data-tab="crisis">Crisis</button>
+    </nav>
+
+    <main>
+      <!-- ============ HOME ============ -->
+      <section id="panel-home" class="panel">
+        <div class="card">
+          <h2>Assalam-o-Alaikum</h2>
+          <p class="muted">Exam season is heavy — be kind to yourself today.</p>
+          <h3>How are you feeling today?</h3>
+          <div id="mood-row"></div>
+          <p id="mood-msg"></p>
+        </div>
+        <h2>Learn, gently</h2>
+        <div id="articles"></div>
+      </section>
+
+      <!-- ============ COUNSELORS ============ -->
+      <section id="panel-counselors" class="panel">
+        <div class="filters">
+          <input id="f-search" type="search" placeholder="Search name, issue, city...">
+          <select id="f-city">
+            <option value="">All cities</option>
+          </select>
+          <select id="f-maxfee">
+            <option value="">Any fee</option>
+            <option value="3000">Up to Rs 3,000</option>
+            <option value="4000">Up to Rs 4,000</option>
+            <option value="6000">Up to Rs 6,000</option>
+            <option value="8000">Up to Rs 8,000</option>
+          </select>
+          <select id="f-lang">
+            <option value="">Any language</option>
+          </select>
+          <select id="f-sort">
+            <option value="rating">Sort: top rated</option>
+            <option value="fee">Sort: lowest fee</option>
+          </select>
+          <label class="check"><input type="checkbox" id="f-verified" checked> Verified only</label>
+        </div>
+        <p id="result-count"></p>
+        <div id="counselor-list"></div>
+      </section>
+
+      <!-- ============ SELF-CHECK ============ -->
+      <section id="panel-selfcheck" class="panel">
+        <h2>Two-minute self check-in</h2>
+        <p class="muted">A sample well-being check (PHQ-2 style). Not a diagnosis — just a mirror.</p>
+        <div id="selfcheck-form"></div>
+        <div id="selfcheck-result"></div>
+      </section>
+
+      <!-- ============ JOURNAL ============ -->
+      <section id="panel-journal" class="panel">
+        <h2>Your journal</h2>
+        <p class="muted">Private — stored only in this browser.</p>
+        <textarea id="journal-text" placeholder="Write what's on your mind..."></textarea>
+        <button id="journal-save" class="btn">Save entry</button>
+        <div id="journal-list" style="margin-top: 18px;"></div>
+      </section>
+
+      <!-- ============ CRISIS ============ -->
+      <section id="panel-crisis" class="panel">
+        <div class="crisis-hero">
+          <h2>Need to talk now?</h2>
+          <p>A trained listener is available right now — day or night.</p>
+          <button class="btn" onclick="alert('Sample demo: in the real app this would dial a verified helpline.')">Call a listener</button>
+        </div>
+        <h2>Helplines <span class="meta">(sample data)</span></h2>
+        <div id="helplines"></div>
+        <div class="card">
+          <h2>4-7-8 breathing</h2>
+          <p class="muted">In for 4 · hold for 7 · out for 8</p>
+          <div class="breath-wrap">
+            <div id="breath-label">Press start, then follow the circle</div>
+            <div id="breath-circle"></div>
+            <button id="breath-start" class="btn">Start</button>
+          </div>
+        </div>
+        <div class="calm-note">
+          <strong>You are not alone.</strong><br>
+          Reaching out is a sign of strength.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Sukoon — UX concept by Muhammad Abbas Khan · All data on this page is sample data.</p>
+    </footer>
+  </div>
+
+  <!-- counselor detail + booking modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button id="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="logic.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
