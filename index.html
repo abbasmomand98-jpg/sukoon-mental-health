@@ -17,11 +17,11 @@
     </header>
 
     <nav class="tabs" aria-label="Sections">
-      <button class="tab-btn" data-tab="home">Home</button>
-      <button class="tab-btn" data-tab="counselors">Counselors</button>
-      <button class="tab-btn" data-tab="selfcheck">Self-check</button>
-      <button class="tab-btn" data-tab="journal">Journal</button>
-      <button class="tab-btn" data-tab="crisis">Crisis</button>
+      <button id="tab-home" class="tab-btn" data-tab="home">Home</button>
+      <button id="tab-counselors" class="tab-btn" data-tab="counselors">Counselors</button>
+      <button id="tab-selfcheck" class="tab-btn" data-tab="selfcheck">Self-check</button>
+      <button id="tab-journal" class="tab-btn" data-tab="journal">Journal</button>
+      <button id="tab-crisis" class="tab-btn" data-tab="crisis">Crisis</button>
     </nav>
 
     <main>
@@ -79,7 +79,7 @@
         <p class="muted">Private — stored only in this browser.</p>
         <textarea id="journal-text" placeholder="Write what's on your mind..."></textarea>
         <button id="journal-save" class="btn">Save entry</button>
-        <div id="journal-list" style="margin-top: 18px;"></div>
+        <div id="journal-list" style="margin-top:18px;"></div>
       </section>
 
       <!-- ============ CRISIS ============ -->
